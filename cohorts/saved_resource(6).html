@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://wordpress.com/widgets/3rd-party-cookie-check/ -->
+<html><plasmo-csui><template shadowrootmode="open"><style>
+  .rec-starting{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .red-circle-count{
+    position: absolute;
+    display: flex;
+    right: 90px;
+    min-width: 80px;
+    font-size: 15px;
+    border-radius: 8px;
+    text-align: center;
+    padding: 0px 8px;
+    justify-content: center;
+    background-color: white;
+    font-family: Arial;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 8px;
+  }
+
+  .main-container-ripple{
+    width: 100vw;
+    right: 0px;
+  }
+  .ripple {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 500px;
+    height: 500px;
+    border-radius: 99999px;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    background-color: rgba(255, 0, 0, 0.7);
+  }
+
+  .fade-in-container {
+    animation: fadeIn 0.2s; 
+    z-index: 100;
+    background-color: white;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes expand {
+    0% { scale: 0; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes scaleRec {
+      0%, 100% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.1);
+      }
+    }
+
+   @keyframes scaleBounce {
+      0%, 100% {
+          transform: scale(1);
+      }
+      50% {
+          transform: scale(1.4);
+      }
+      70% {
+          transform: scale(1.2);
+      }
+    }
+
+  .recording-logo{
+    width: 50px;
+    transition: 0.5s;
+  }
+  .red-circle{
+      width: 30px;
+      height: 30px;
+      background-color: red;
+  }
+
+  .recording-button {
+      width: 70px;
+      height: 70px;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      font-size: 30px;
+      background-color: white;
+      border-radius: 99px;
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+      transition: 0.5s;
+      font-family: Arial;
+      box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
+      animation: scaleRec 2.5s infinite; 
+  }
+
+  .rec-button-anim{
+    animation: scaleBounce 0.2s;      
+  }
+
+  .recording-button:hover{
+      width: 80px;
+      height: 80px; 
+      animation: none;
+  }
+
+  @keyframes ripple {
+      to {
+        transform: scale(20);
+        opacity: 0;
+      }
+    }
+  </style><div id="plasmo-shadow-container" style="z-index: 2147483647; position: relative;"><div id="plasmo-overlay-0" class="plasmo-csui-container" style="display: flex; position: absolute; top: 0px; left: 0px;"></div></div></template></plasmo-csui><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>
+<iframe src="./saved_resource(7).html"></iframe>
+<script>
+	const iframe = document.querySelector( 'iframe' );
+	if ( window.parent ) {
+		window.addEventListener( 'message', function ( event ) {
+			if ( 'https://public-api.wordpress.com' !== event.origin || event.source !== iframe.contentWindow ) {
+				return;
+			}
+			if ( 'cookie-auth-ok' === event.data ) {
+				window.parent.postMessage( 'WPCOM:3PC:allowed', '*' );
+			} else if ( 'cookie-auth-missing' === event.data ) {
+				window.parent.postMessage( 'WPCOM:3PC:blocked', '*' );
+			}
+		} );
+	}
+</script>
+
+</body></html>
